@@ -16,11 +16,7 @@ $('#loader_image').show();
 success: function(html) {
 $("#results").append(html);
 $('#loader_image').hide();
-if (html == "") {
-$("#loader_message").html('<button class="btn btn-default" type="button">No more records.</button>').show()
-} else {
-$("#loader_message").html('<button class="btn btn-default" type="button">Loading please wait...</button>').show();
-}
+
 window.busy = false;
 }
 });
