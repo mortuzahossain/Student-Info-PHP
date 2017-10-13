@@ -7,6 +7,76 @@ $sql = "SELECT * FROM student_info WHERE id = $id";
 $result = mysqli_query($con,$sql)->fetch_assoc();
 //print_r($result);
 
+// TODO : Calculation for Average
+
+$l1t1 = $result['l1t1'];
+$l1t2 = $result['l1t2'];
+$l2t1 = $result['l2t1'];
+$l2t2 = $result['l2t2'];
+$l3t1 = $result['l3t1'];
+$l3t2 = $result['l3t2'];
+$l4t1 = $result['l4t1'];
+$l4t2 = $result['l4t2'];
+
+$avg = 0;
+
+
+if ( !empty($l1t1) && !empty($l1t2) 
+    &&  !empty($l2t1) && ! empty($l2t2)
+    &&  !empty($l3t1) && ! empty($l3t2)
+    &&  !empty($l4t1) && ! empty($l4t2) ) {
+    
+    $avg = ($l1t1 + $l1t2 + $l2t1 + $l2t2 + $l3t1 + $l3t2 + $l4t1 + $l4t2 ) / 8;
+}
+
+
+if ( !empty($l1t1) && !empty($l1t2) 
+    &&  !empty($l2t1) && ! empty($l2t2)
+    &&  !empty($l3t1) && ! empty($l3t2)
+    &&  !empty($l4t1) ) {    
+    $avg = ($l1t1 + $l1t2 + $l2t1 + $l2t2 + $l3t1 + $l3t2 + $l4t1) / 7;
+}
+
+if ( !empty($l1t1) && !empty($l1t2) 
+    &&  !empty($l2t1) && ! empty($l2t2)
+    &&  !empty($l3t1) && ! empty($l3t2) ) {
+    
+    $avg = ($l1t1 + $l1t2 + $l2t1 + $l2t2 + $l3t1 + $l3t2 ) / 6;
+}
+
+if ( !empty($l1t1) && !empty($l1t2) 
+    &&  !empty($l2t1) && ! empty($l2t2)
+    &&  !empty($l3t1) ) {
+    
+    $avg = ($l1t1 + $l1t2 + $l2t1 + $l2t2 + $l3t1 ) / 5;
+}
+
+if ( !empty($l1t1) && !empty($l1t2) 
+    &&  !empty($l2t1) && ! empty($l2t2)) {
+    
+    $avg = ($l1t1 + $l1t2 + $l2t1 + $l2t2 ) / 4;
+}
+
+if ( !empty($l1t1) && !empty($l1t2) 
+    &&  !empty($l2t1) ) {
+    
+    $avg = ($l1t1 + $l1t2 + $l2t1 ) / 3;
+}
+
+if (!empty($l1t1) &&! empty($l1t2) ) {
+    
+    $avg = ($l1t1 + $l1t2 ) / 2;
+}
+
+if (!empty($l1t1) ) {
+    
+    $avg = $l1t1;
+}
+
+
+//echo $avg;
+
+
 ?>
 
 
@@ -105,7 +175,7 @@ if (isset($_POST['updateme'])) {
                                     <td><input type="date" name="enrollday" class="form-control myinput" placeholder="enroll day" value="<?php echo $result['enrollday']; ?>"></td>
                                 </tr>
                             </table>
-                            <h3 class="text-center">Result</h3>
+                            <h3 class="text-center">Result</h3><span class="right-avg">Average :<?php echo $avg; ?></span>
                             <table class="table table-bordered">
                                 <tr>
                                     <td>L1/T1</td>
