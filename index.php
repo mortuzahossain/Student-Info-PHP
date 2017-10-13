@@ -68,7 +68,10 @@ if(isset($_POST['saveme'])){
         <![endif]-->
     </head>
     <body>
-        
+    
+        <div class="preloader"><img src="img/loading.gif"></div>
+
+
         
         <div class="fixed-search-form left">
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -181,6 +184,7 @@ if(isset($_POST['saveme'])){
         <script src="js/jquery-1.12.0.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/scrolltop.js"></script>
+        <script src="js/preloader.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

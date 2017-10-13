@@ -98,6 +98,8 @@ if (!empty($l1t1) ) {
         <![endif]-->
     </head>
     <body>
+
+        <div class="preloader"><img src="img/loading.gif"></div>
         
         <div class="header_logo updateheader text-center">
             <div class="col-md-12">
@@ -224,6 +226,7 @@ if (isset($_POST['updateme'])) {
             
             <script src="js/jquery-1.12.0.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
+            <script src="js/preloader.js"></script>
             <script src="js/main.js"></script>
         </body>
     </html>
