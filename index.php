@@ -199,16 +199,28 @@ if(isset($_POST['saveme'])){
         
         <div class="header_logo text-center">
             <div class="col-md-12">
-                <div class="row"><a href="index.php"><img src="img/baust.png" alt="baustMonogram"></a></div>
+                <div class="row"><a href="index.php"><img class="logo" src="img/baust.png" alt="baustMonogram"></a></div>
             </div>
         </div>
         
         <div class="showing_data">
             <div class="container">
+<?php if (isset($_POST['search_me'])) { ?>
+
                 <div class="col-md-12">
+<?php
+    show_data($sql,$con);
+} else {
+    ?>
+    <div class='col-md-12' id='results'>
+    <div id="loader_image" class="text-center"><img class="loader_image" src="img/loader.gif" alt="">Loading...please wait</div>
+    <div id="loader_message"></div>   
+    <?php
+}
+?>
 
-                    <?php show_data($sql,$con); ?>
 
+                    
 
                 </div>
             </div>

@@ -40,7 +40,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .header_logo{
     height: 130px;
 }
-img {
+.logo {
     height: 100px;
     width: 114px;
     margin-bottom: 35px;
@@ -94,4 +94,9 @@ img {
     padding: 5px;
     text-align: center;
     margin-right: 0px;
+}
+
+.loader_image{
+    height: 24px !important;
+    width: 24px !important;
 }
