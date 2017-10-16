@@ -103,7 +103,7 @@ if (!empty($l1t1) ) {
         
         <div class="header_logo updateheader text-center">
             <div class="col-md-12">
-                <div class="row"><a href="index.php"><img src="img/baust.png" alt="baustMonogram"></a></div>
+                <div class="row"><a href="index.php"><img class="logo" src="img/baust.png" alt="baustMonogram"></a></div>
             </div>
         </div>
         <div class="showing_data">
